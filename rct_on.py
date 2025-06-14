@@ -4,16 +4,25 @@ try:
 except:
     is_loaded = False
 
-def ntp_is_on():    
+def change_ntp(host: tuple):
+    try:
+        from socket import getaddrinfo
+        from ntptime import settime
+        getaddrinfo('www.google.com', 443)[0][-1]
+        if host:
+            settime(timezone=host[0], server=host[1])
+        else:
+            settime()
+        return True
+    except:
+        return False
+
+def ntp_is_on(first_try: bool):
+    if first_try: change_ntp(())
+        
     if is_loaded:
         if machine.RTC().datetime()[0] == 2000:
-            try:
-                from socket import getaddrinfo
-                from ntptime import settime
-                getaddrinfo('www.google.com', 443)[0][-1]
-                settime()
-                return True
-            except:
-                return False
-
-ntp_is_on()
+            change_ntp(())
+    else:
+        import machine
+        change_ntp(())
