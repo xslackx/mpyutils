@@ -25,4 +25,4 @@ def ntp_is_on(first_try: bool):
             change_ntp(())
     else:
         import machine
-        change_ntp(())
+        change_ntp(())        
