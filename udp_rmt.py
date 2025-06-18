@@ -1,5 +1,4 @@
 import socket
-from time import sleep
 
 MAX_BYTES = 1024
 
