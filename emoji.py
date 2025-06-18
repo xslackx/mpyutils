@@ -77,7 +77,8 @@ class emojis:
             ("satellite_antenna", "\U0001F4E1"),]
     
     def all_itens(self):
-        print({"Faces: ": len(self.faces),
+        print(
+        {"Faces: ": len(self.faces),
          "Hands: ": len(self.hands),
          "Signals: ": len(self.signals)})
         
