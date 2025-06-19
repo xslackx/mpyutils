@@ -8,6 +8,8 @@ with the MicroPython.
 - time in ms
 - time in us
 - udp listener 
+- cpu usage
+- esp board info
 
 # Boards tested:
 - NodeMCU V3 ESP module with ESP8266
